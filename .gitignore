@@ -1,0 +1,49 @@
+# --- Unity (projet dans UnityProject/) ---
+/UnityProject/[Ll]ibrary/
+/UnityProject/[Tt]emp/
+/UnityProject/[Oo]bj/
+/UnityProject/[Bb]uild/
+/UnityProject/[Bb]uilds/
+/UnityProject/[Ll]ogs/
+/UnityProject/[Uu]ser[Ss]ettings/
+/UnityProject/[Mm]emoryCaptures/
+/UnityProject/[Rr]ecordings/
+/UnityProject/Assets/Plugins/Editor/JetBrains*
+
+# Fichiers générés par les IDE
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Builds Android / Quest
+*.apk
+*.aab
+*.unitypackage
+*.app
+crashlytics-build.properties
+sysinfo.txt
+
+# --- Blender ---
+*.blend1
+*.blend2
+*.blend@
+
+# --- Divers ---
+tmp/
+*.tmp
+Thumbs.db
+desktop.ini
+.DS_Store
