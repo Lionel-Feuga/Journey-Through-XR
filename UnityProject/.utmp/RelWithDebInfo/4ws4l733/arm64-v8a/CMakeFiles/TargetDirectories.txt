@@ -1,5 +1,0 @@
-C:/dev/journey_through_xr/UnityProject/.utmp/RelWithDebInfo/4ws4l733/arm64-v8a/CMakeFiles/edit_cache.dir
-C:/dev/journey_through_xr/UnityProject/.utmp/RelWithDebInfo/4ws4l733/arm64-v8a/CMakeFiles/rebuild_cache.dir
-C:/dev/journey_through_xr/UnityProject/.utmp/RelWithDebInfo/4ws4l733/arm64-v8a/GameActivity/CMakeFiles/game.dir
-C:/dev/journey_through_xr/UnityProject/.utmp/RelWithDebInfo/4ws4l733/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
-C:/dev/journey_through_xr/UnityProject/.utmp/RelWithDebInfo/4ws4l733/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
