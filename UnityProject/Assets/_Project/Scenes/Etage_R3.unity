@@ -176,6 +176,131 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+--- !u!114 &205343008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &225606572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &258936853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &274045110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &301221567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &322125262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -226,15 +351,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8163019746708565109, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8127404873725829794, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7801955092710711451, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7106428423004517238, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
@@ -242,47 +367,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6644559982241893972, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6251330698793141475, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4972643926229287830, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4148646570984915742, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3528848714681085715, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2389468994531025314, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1954907339750515010, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1790910835440836525, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -87047638050278443, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -82034725430660178, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 918702459742148254, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Name
@@ -290,19 +415,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1130221343545008415, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1171108389131328009, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1358789987575793952, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1400089507438335438, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2215425130682116377, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_CastShadows
@@ -310,43 +435,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2893749783322625445, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3152592648955179588, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3594640983698738869, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4389327363887004866, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5027147131316535739, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6216841122261030041, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6485477663698060187, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6579386702097794279, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6647001866481980148, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7093532941032040129, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7128440817894711927, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_CastShadows
@@ -354,7 +479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8686185132066530825, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8748497287743444598, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
       propertyPath: m_Enabled
@@ -363,8 +488,390 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -1577735427358064932, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 322125296}
+    - targetCorrespondingSourceObject: {fileID: 7737482369943714878, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 322125295}
+    - targetCorrespondingSourceObject: {fileID: -7811279516110183399, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 322125294}
+    - targetCorrespondingSourceObject: {fileID: -6681218985202270919, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 322125293}
+    - targetCorrespondingSourceObject: {fileID: 6222457924019525601, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 322125292}
+    - targetCorrespondingSourceObject: {fileID: -5294544234492349942, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1182721290}
+    - targetCorrespondingSourceObject: {fileID: -9160468850730183500, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 301221567}
+    - targetCorrespondingSourceObject: {fileID: -2141833111407868923, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1941491575}
+    - targetCorrespondingSourceObject: {fileID: -5604031981747604728, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1805441550}
+    - targetCorrespondingSourceObject: {fileID: -6154982531571279914, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 570348647}
+    - targetCorrespondingSourceObject: {fileID: 5122347576086574355, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1449560326}
+    - targetCorrespondingSourceObject: {fileID: 4024348101449820558, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1444533422}
+    - targetCorrespondingSourceObject: {fileID: -4252076399611101215, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 372998772}
+    - targetCorrespondingSourceObject: {fileID: 1184171076571885770, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 258936853}
+    - targetCorrespondingSourceObject: {fileID: -7409496885180566516, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1778200643}
+    - targetCorrespondingSourceObject: {fileID: 1229777806603772081, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2065137339}
+    - targetCorrespondingSourceObject: {fileID: -6649397617638010978, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1203490514}
+    - targetCorrespondingSourceObject: {fileID: -8894908670883751950, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 205343008}
+    - targetCorrespondingSourceObject: {fileID: 5747125257081676440, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 997532067}
+    - targetCorrespondingSourceObject: {fileID: 6867155468193916416, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 274045110}
+    - targetCorrespondingSourceObject: {fileID: 1363091420482580130, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1846852414}
+    - targetCorrespondingSourceObject: {fileID: -403872592455022411, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1891170557}
+    - targetCorrespondingSourceObject: {fileID: -8321145938044954554, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2102057023}
+    - targetCorrespondingSourceObject: {fileID: 4510962369641242147, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1425365323}
+    - targetCorrespondingSourceObject: {fileID: 7833002114630809405, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1191917371}
+    - targetCorrespondingSourceObject: {fileID: 5518003526218011881, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1497012395}
+    - targetCorrespondingSourceObject: {fileID: -8794590976410970336, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1614362087}
+    - targetCorrespondingSourceObject: {fileID: -880614945497342074, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 498195354}
+    - targetCorrespondingSourceObject: {fileID: 8516212756993050391, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 225606572}
   m_SourcePrefab: {fileID: 100100000, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+--- !u!1 &322125263 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8516212756993050391, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125264 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -880614945497342074, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8794590976410970336, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5518003526218011881, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125267 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7833002114630809405, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4510962369641242147, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8321145938044954554, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -403872592455022411, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1363091420482580130, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6867155468193916416, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125273 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5747125257081676440, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8894908670883751950, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125275 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6649397617638010978, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125276 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1229777806603772081, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7409496885180566516, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1184171076571885770, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4252076399611101215, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4024348101449820558, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125281 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5122347576086574355, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6154982531571279914, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5604031981747604728, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2141833111407868923, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -9160468850730183500, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5294544234492349942, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6222457924019525601, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125288 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6681218985202270919, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125289 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7811279516110183399, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125290 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7737482369943714878, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &322125291 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1577735427358064932, guid: 328160be259a9444bac2bb1f6219dbe9, type: 3}
+  m_PrefabInstance: {fileID: 322125262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &322125292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &322125293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &322125294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &322125295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &322125296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &372998772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &487887682
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,6 +999,456 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &498195354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &570348647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &997532067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1182721290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1191917371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1203490514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1425365323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1444533422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1449560326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1497012395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1614362087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1778200643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1805441550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1846852414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1891170557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1941491575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2065137339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2102057023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322125269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f385d8b9665d0c4290a4dd998d83e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Building.Door
+  openAngle: 95
+  swing: 0
+  speed: 200
+  autoOpen: 1
+  openDistance: 1.6
+  closeDelay: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
