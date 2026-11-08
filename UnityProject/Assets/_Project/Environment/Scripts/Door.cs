@@ -77,14 +77,12 @@ namespace JourneyThroughXR.Building
 
         private void UpdateAutoOpen()
         {
-            if (!FindVisitor()) return;
-
-            bool near = !locked && HorizontalDistance(visitor.position, closedCenter) < openDistance;
+            bool near = FindNearestOpener(out Vector3 openerPosition) && !locked;
 
             if (near)
             {
                 lastNearTime = Time.time;
-                if (!IsOpen) targetAngle = ChooseAngle(visitor.position);
+                if (!IsOpen) targetAngle = ChooseAngle(openerPosition);
             }
             else if (IsOpen && Time.time - lastNearTime > closeDelay)
             {
@@ -127,6 +125,37 @@ namespace JourneyThroughXR.Building
             if (mainCamera == null) return false;
             visitor = mainCamera.transform;
             return true;
+        }
+
+        private bool FindNearestOpener(out Vector3 position)
+        {
+            position = default;
+            float best = openDistance;
+            bool found = false;
+
+            if (FindVisitor())
+            {
+                float distance = HorizontalDistance(visitor.position, closedCenter);
+                if (distance < best)
+                {
+                    best = distance;
+                    position = visitor.position;
+                    found = true;
+                }
+            }
+
+            foreach (var opener in DoorOpener.All)
+            {
+                float distance = HorizontalDistance(opener.transform.position, closedCenter);
+                if (distance < best)
+                {
+                    best = distance;
+                    position = opener.transform.position;
+                    found = true;
+                }
+            }
+
+            return found;
         }
 
         private float ChooseAngle(Vector3 visitorPosition)
