@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 153982007679157697, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_MoveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Name
       value: XR Origin (XR Rig)
@@ -169,6 +173,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904471525139099824, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -321,6 +329,10 @@ MonoBehaviour:
   isStop: 1
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue:
+  - 'Salle 305 : place au pilotage !'
+  - "Prenez les commandes de la voiture radiocommand\xE9e."
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -835,6 +847,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -1986,6 +2000,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -2020,6 +2036,82 @@ MonoBehaviour:
   onClosed:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &388184274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 388184277}
+  - component: {fileID: 388184276}
+  - component: {fileID: 388184275}
+  m_Layer: 0
+  m_Name: Bouton_A
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &388184275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388184274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.36078432, g: 0.7607843, b: 0.4627451, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &388184276
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388184274}
+  m_CullTransparentMesh: 1
+--- !u!224 &388184277
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388184274}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1881763532}
+  m_Father: {fileID: 1585553888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -30, y: 30}
+  m_SizeDelta: {x: 46, y: 46}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &409554159
 GameObject:
   m_ObjectHideFlags: 0
@@ -2291,6 +2383,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -2636,6 +2730,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -2692,6 +2788,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -2838,37 +2936,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746419278}
   m_CullTransparentMesh: 1
---- !u!1 &870010669
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 870010670}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &870010670
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870010669}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.66716, y: 0, z: -0.23674}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &880060679
 GameObject:
   m_ObjectHideFlags: 0
@@ -2916,6 +2983,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -2972,6 +3041,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -3028,6 +3099,10 @@ MonoBehaviour:
   isStop: 1
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue:
+  - "Voici l'open-space. Les \xE9tudiants y travaillent sur leurs projets."
+  - "Approchez-vous de l'ordinateur pour essayer l'activit\xE9."
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -3037,6 +3112,218 @@ MonoBehaviour:
   onRobotLeft:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &948331829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 948331830}
+  - component: {fileID: 948331832}
+  - component: {fileID: 948331831}
+  m_Layer: 0
+  m_Name: Fond
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &948331830
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948331829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1585553888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &948331831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948331829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.105882354, g: 0.13333334, b: 0.11372549, a: 0.9019608}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &948331832
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948331829}
+  m_CullTransparentMesh: 1
+--- !u!1 &951371294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 951371297}
+  - component: {fileID: 951371296}
+  - component: {fileID: 951371295}
+  m_Layer: 0
+  m_Name: Texte
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &951371295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951371294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "Bonjour et bienvenue \xE0 Epitech Nice !"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 30
+  m_fontSizeBase: 30
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 30
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &951371296
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951371294}
+  m_CullTransparentMesh: 1
+--- !u!224 &951371297
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951371294}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1585553888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -48, y: -48}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &957226304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3336,6 +3623,10 @@ MonoBehaviour:
   isStop: 1
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue:
+  - "Derni\xE8re \xE9tape : la salle 301."
+  - "Sabre laser ou partie d'\xE9checs, \xE0 vous de choisir !"
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -3392,6 +3683,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -3448,6 +3741,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -4256,6 +4551,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -4337,6 +4634,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -4443,6 +4742,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -4573,7 +4874,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Guide.GuideWaypoint
   isStop: 1
   waitForActivity: {fileID: 0}
-  pauseAtStop: 3
+  pauseAtStop: 0
+  dialogue:
+  - "Bonjour et bienvenue \xE0 Epitech Nice !"
+  - "Je suis votre guide. Suivez-moi, je vous fais visiter l'\xE9tage."
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -4788,6 +5093,10 @@ MonoBehaviour:
   isStop: 1
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue:
+  - "Un petit d\xE9tour par les sanitaires..."
+  - "M\xEAme ici, il y a du travail : \xE0 vous de faire briller les lieux !"
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -4844,6 +5153,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -4986,6 +5297,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583667843}
   m_CullTransparentMesh: 1
+--- !u!1 &1585553887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1585553888}
+  - component: {fileID: 1585553889}
+  m_Layer: 0
+  m_Name: Bulle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1585553888
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585553887}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 948331830}
+  - {fileID: 951371297}
+  - {fileID: 388184277}
+  m_Father: {fileID: 1745151799}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 1.85}
+  m_SizeDelta: {x: 520, y: 170}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &1585553889
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585553887}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1593679209
 GameObject:
   m_ObjectHideFlags: 0
@@ -5033,6 +5406,9 @@ MonoBehaviour:
   isStop: 1
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue:
+  - "La visite est termin\xE9e. Merci de m'avoir suivi !"
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -5090,6 +5466,7 @@ GameObject:
   - component: {fileID: 1745151799}
   - component: {fileID: 1745151798}
   - component: {fileID: 1745151797}
+  - component: {fileID: 1745151800}
   m_Layer: 0
   m_Name: Robot_Guide
   m_TagString: Untagged
@@ -5127,6 +5504,8 @@ MonoBehaviour:
   turnSpeed: 240
   joinDistance: 2.5
   maxLead: 5
+  speech: {fileID: 0}
+  talkDistance: 3
   visual: {fileID: 37315044}
   hoverHeight: 0.15
   hoverAmplitude: 0.05
@@ -5152,8 +5531,52 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 37315044}
+  - {fileID: 1585553888}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1745151800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745151796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db14a2ec054629243a89084d25d5c3c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JourneyThroughXR.Guide.GuideSpeechBubble
+  bubble: {fileID: 1585553887}
+  label: {fileID: 951371295}
+  nextPrompt: {fileID: 388184274}
+  faceVisitor: 1
+  typingDelay: 0.03
+  nextAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Dialogue suivant
+      m_Type: 1
+      m_ExpectedControlType: 
+      m_Id: 01868525-74f2-4bf4-8655-d6faded39ff4
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 997d9d1e-865e-4623-a132-9d449ec29895
+        m_Path: <XRController>{RightHand}/primaryButton
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Dialogue suivant
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  onDialogueStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onDialogueFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1752340576
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,6 +5624,10 @@ MonoBehaviour:
   isStop: 1
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue:
+  - Bienvenue dans la salle 307.
+  - "Ici, place \xE0 la cr\xE9ativit\xE9 : essayez de dessiner !"
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -5282,6 +5709,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -5341,6 +5770,143 @@ MonoBehaviour:
   onClosed:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1881763531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1881763532}
+  - component: {fileID: 1881763534}
+  - component: {fileID: 1881763533}
+  m_Layer: 0
+  m_Name: Lettre
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1881763532
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881763531}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 388184277}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1881763533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881763531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: A
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4280099355
+  m_fontColor: {r: 0.105882354, g: 0.13333334, b: 0.11372549, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 30
+  m_fontSizeBase: 30
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1881763534
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881763531}
+  m_CullTransparentMesh: 1
 --- !u!114 &1891170557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5413,6 +5979,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -5584,6 +6152,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -5665,6 +6235,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -5721,6 +6293,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -5892,6 +6466,8 @@ MonoBehaviour:
   isStop: 0
   waitForActivity: {fileID: 0}
   pauseAtStop: 3
+  dialogue: []
+  dialogueDelay: 0.5
   onRobotArrived:
     m_PersistentCalls:
       m_Calls: []
@@ -5908,7 +6484,6 @@ SceneRoots:
   - {fileID: 487887684}
   - {fileID: 4729687}
   - {fileID: 322125262}
-  - {fileID: 870010670}
   - {fileID: 76887962}
   - {fileID: 1259641083}
   - {fileID: 1745151799}

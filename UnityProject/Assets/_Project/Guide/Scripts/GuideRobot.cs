@@ -38,6 +38,13 @@ namespace JourneyThroughXR.Guide
         [Tooltip("Distance maximale d'avance sur le visiteur avant de l'attendre.")]
         [SerializeField] private float maxLead = 5f;
 
+        [Header("Dialogue")]
+        [Tooltip("Bulle de dialogue. Vide : celle du robot est trouvée seule.")]
+        [SerializeField] private GuideSpeechBubble speech;
+
+        [Tooltip("Le robot commence à parler quand le visiteur est à moins de cette distance.")]
+        [SerializeField] private float talkDistance = 3f;
+
         [Header("Apparence")]
         [SerializeField] private Transform visual;
         [SerializeField] private float hoverHeight = 0.15f;
@@ -54,12 +61,17 @@ namespace JourneyThroughXR.Guide
         // État
         public GuideState State { get; private set; } = GuideState.Idle;
         public GuideWaypoint CurrentStop { get; private set; }
+        public GuideRoute Route => route;
 
         private Transform visitor;
         private Coroutine running;
 
         // Cycle de vie
-        private void Awake() => ApplyColors();
+        private void Awake()
+        {
+            if (speech == null) speech = GetComponent<GuideSpeechBubble>();
+            ApplyColors();
+        }
 
         private void Start()
         {
@@ -103,8 +115,12 @@ namespace JourneyThroughXR.Guide
                 waypoint.onRobotArrived.Invoke();
                 StopReached?.Invoke(waypoint);
 
+                State = GuideState.AtStop;
+                bool spoke = waypoint.HasDialogue && speech != null;
+                if (spoke) yield return Speak(waypoint);
+
                 State = GuideState.WaitingForVisitor;
-                while (!VisitorWithin(joinDistance))
+                while (!spoke && !VisitorWithin(joinDistance))
                 {
                     FaceVisitor();
                     yield return null;
@@ -121,18 +137,40 @@ namespace JourneyThroughXR.Guide
                     }
                 }
 
-                float end = Time.time + waypoint.PauseAtStop;
-                while (Time.time < end)
-                {
-                    FaceVisitor();
-                    yield return null;
-                }
+                yield return Wait(waypoint.PauseAtStop);
                 waypoint.onRobotLeft.Invoke();
             }
 
             State = GuideState.Finished;
             running = null;
             onFinished.Invoke();
+        }
+
+        private IEnumerator Speak(GuideWaypoint waypoint)
+        {
+            while (!VisitorWithin(talkDistance))
+            {
+                FaceVisitor();
+                yield return null;
+            }
+
+            yield return Wait(waypoint.DialogueDelay);
+            speech.SayLines(waypoint.Dialogue);
+            while (speech.IsSpeaking)
+            {
+                FaceVisitor();
+                yield return null;
+            }
+        }
+
+        private IEnumerator Wait(float seconds)
+        {
+            float end = Time.time + seconds;
+            while (Time.time < end)
+            {
+                FaceVisitor();
+                yield return null;
+            }
         }
 
         private IEnumerator MoveTo(Vector3 target)
