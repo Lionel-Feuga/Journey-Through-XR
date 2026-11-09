@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JourneyThroughXR.Core;
+using JourneyThroughXR.UI;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -45,6 +47,9 @@ namespace JourneyThroughXR.Guide
         [Tooltip("Le robot commence à parler quand le visiteur est à moins de cette distance.")]
         [SerializeField] private float talkDistance = 3f;
 
+        [Tooltip("Fenêtre de tutoriel des activités. Vide : celle de la scène est trouvée seule.")]
+        [SerializeField] private TutorialWindow tutorial;
+
         [Header("Apparence")]
         [SerializeField] private Transform visual;
         [SerializeField] private float hoverHeight = 0.15f;
@@ -70,6 +75,7 @@ namespace JourneyThroughXR.Guide
         private void Awake()
         {
             if (speech == null) speech = GetComponent<GuideSpeechBubble>();
+            if (tutorial == null) tutorial = FindAnyObjectByType<TutorialWindow>();
             ApplyColors();
         }
 
@@ -130,6 +136,7 @@ namespace JourneyThroughXR.Guide
                 State = GuideState.AtStop;
                 if (waypoint.WaitForActivity != null)
                 {
+                    yield return ShowTutorial(waypoint.WaitForActivity);
                     while (!waypoint.WaitForActivity.IsCompleted)
                     {
                         FaceVisitor();
@@ -157,6 +164,24 @@ namespace JourneyThroughXR.Guide
             yield return Wait(waypoint.DialogueDelay);
             speech.SayLines(waypoint.Dialogue);
             while (speech.IsSpeaking)
+            {
+                FaceVisitor();
+                yield return null;
+            }
+        }
+
+        private IEnumerator ShowTutorial(Activity activity)
+        {
+            if (activity.State != ActivityState.NotStarted) yield break;
+
+            if (tutorial == null || string.IsNullOrWhiteSpace(activity.TutorialText))
+            {
+                activity.StartActivity();
+                yield break;
+            }
+
+            tutorial.Show(activity, transform);
+            while (tutorial.IsOpen)
             {
                 FaceVisitor();
                 yield return null;
