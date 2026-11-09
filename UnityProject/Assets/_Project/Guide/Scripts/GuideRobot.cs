@@ -54,8 +54,8 @@ namespace JourneyThroughXR.Guide
         [SerializeField] private Transform visual;
         [SerializeField] private float hoverHeight = 0.15f;
         [SerializeField] private float hoverAmplitude = 0.05f;
-        [SerializeField] private Color bodyColor = new Color(0.85f, 0.85f, 0.9f);
-        [SerializeField] private Color accentColor = new Color(0.95f, 0.35f, 0.6f);
+        [SerializeField] private Color bodyColor = new Color(0.92f, 0.93f, 0.95f);
+        [SerializeField] private Color accentColor = new Color(0.95f, 0.15f, 0.45f);
 
         [Header("Événements")]
         public UnityEvent onStarted = new UnityEvent();
@@ -278,13 +278,23 @@ namespace JourneyThroughXR.Guide
             var block = new MaterialPropertyBlock();
             foreach (var meshRenderer in visual.GetComponentsInChildren<Renderer>())
             {
-                bool accent = meshRenderer.name.StartsWith("Oeil") || meshRenderer.name.StartsWith("Antenne");
+                string partName = meshRenderer.name;
+                bool accent = StartsWithAny(partName, "Oeil", "Pupille", "Antenne", "Point");
+                bool body = StartsWithAny(partName, "Corps", "Tete", "Bras");
+                if (!accent && !body) continue;
                 Color color = accent ? accentColor : bodyColor;
                 meshRenderer.GetPropertyBlock(block);
                 block.SetColor("_BaseColor", color);
                 block.SetColor("_Color", color);
                 meshRenderer.SetPropertyBlock(block);
             }
+        }
+
+        private static bool StartsWithAny(string value, params string[] prefixes)
+        {
+            foreach (string prefix in prefixes)
+                if (value.StartsWith(prefix)) return true;
+            return false;
         }
 
         [ContextMenu("Créer le corps en primitives")]
