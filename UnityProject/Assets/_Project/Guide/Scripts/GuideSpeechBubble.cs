@@ -30,15 +30,28 @@ namespace JourneyThroughXR.Guide
         [SerializeField] private InputActionProperty nextAction = new InputActionProperty(
             new InputAction("Dialogue suivant", InputActionType.Button, "<XRController>{RightHand}/primaryButton"));
 
+        [Tooltip("Bouton qui répond « non » à une question : B de la manette droite.")]
+        [SerializeField] private InputActionProperty noAction = new InputActionProperty(
+            new InputAction("Non", InputActionType.Button, "<XRController>{RightHand}/secondaryButton"));
+
         [Header("Événements")]
         public UnityEvent onDialogueStarted = new UnityEvent();
         public UnityEvent onDialogueFinished = new UnityEvent();
 
         // État
         public bool IsSpeaking => speaking != null;
+        public bool LastAnswer { get; private set; }
 
         private Transform visitor;
         private Coroutine speaking;
+        private GameObject answers;
+        private TMP_Text yesText;
+        private TMP_Text noText;
+        private Vector2 labelOffsetMin;
+        private bool labelRaised;
+
+        private static readonly Color32 YesColor = new Color32(0x5C, 0xC2, 0x76, 0xFF);
+        private static readonly Color32 NoColor = new Color32(0xF2, 0x26, 0x73, 0xFF);
 
         // Cycle de vie
         private void Awake() => SetVisible(false);
@@ -46,11 +59,13 @@ namespace JourneyThroughXR.Guide
         private void OnEnable()
         {
             if (nextAction.reference == null) nextAction.action?.Enable();
+            if (noAction.reference == null) noAction.action?.Enable();
         }
 
         private void OnDisable()
         {
             if (nextAction.reference == null) nextAction.action?.Disable();
+            if (noAction.reference == null) noAction.action?.Disable();
         }
 
         private void LateUpdate()
@@ -73,6 +88,13 @@ namespace JourneyThroughXR.Guide
             if (lines == null || lines.Count == 0 || label == null) return;
             if (speaking != null) StopCoroutine(speaking);
             speaking = StartCoroutine(Speak(lines));
+        }
+
+        public void Ask(string question, string yes, string no)
+        {
+            if (string.IsNullOrWhiteSpace(question) || label == null) return;
+            if (speaking != null) StopCoroutine(speaking);
+            speaking = StartCoroutine(AskQuestion(question, yes, no));
         }
 
         public void Hide()
@@ -107,6 +129,106 @@ namespace JourneyThroughXR.Guide
             onDialogueFinished.Invoke();
         }
 
+        private IEnumerator AskQuestion(string question, string yes, string no)
+        {
+            onDialogueStarted.Invoke();
+            SetVisible(true);
+            SetPrompt(false);
+
+            var labelRect = (RectTransform)label.transform;
+            if (!labelRaised) labelOffsetMin = labelRect.offsetMin;
+            labelRect.offsetMin = new Vector2(labelOffsetMin.x, 70f);
+            labelRaised = true;
+
+            label.text = question;
+            yield return TypeLine();
+
+            if (BuildAnswers())
+            {
+                yesText.text = yes;
+                noText.text = no;
+                answers.SetActive(true);
+            }
+            yield return null;
+
+            while (true)
+            {
+                if (NextPressed())
+                {
+                    LastAnswer = true;
+                    break;
+                }
+                var action = noAction.action;
+                if (action != null && action.WasPressedThisFrame())
+                {
+                    LastAnswer = false;
+                    break;
+                }
+                yield return null;
+            }
+            yield return null;
+
+            SetVisible(false);
+            speaking = null;
+            onDialogueFinished.Invoke();
+        }
+
+        private bool BuildAnswers()
+        {
+            if (answers != null) return true;
+            if (bubble == null || nextPrompt == null) return false;
+
+            answers = new GameObject("Reponses", typeof(RectTransform), typeof(HorizontalLayoutGroup));
+            answers.transform.SetParent(bubble.transform, false);
+            var rect = (RectTransform)answers.transform;
+            rect.anchorMin = new Vector2(0f, 0f);
+            rect.anchorMax = new Vector2(1f, 0f);
+            rect.pivot = new Vector2(0.5f, 0.5f);
+            rect.sizeDelta = new Vector2(-40f, 46f);
+            rect.anchoredPosition = new Vector2(0f, 38f);
+
+            var layout = answers.GetComponent<HorizontalLayoutGroup>();
+            layout.childAlignment = TextAnchor.MiddleCenter;
+            layout.spacing = 12f;
+            layout.childControlWidth = true;
+            layout.childControlHeight = true;
+            layout.childForceExpandWidth = false;
+            layout.childForceExpandHeight = false;
+
+            yesText = AddAnswer("A", YesColor);
+            var gap = new GameObject("Espace", typeof(RectTransform), typeof(LayoutElement));
+            gap.transform.SetParent(answers.transform, false);
+            gap.GetComponent<LayoutElement>().preferredWidth = 40f;
+            noText = AddAnswer("B", NoColor);
+
+            answers.SetActive(false);
+            return true;
+        }
+
+        private TMP_Text AddAnswer(string letter, Color32 color)
+        {
+            var circle = Instantiate(nextPrompt, answers.transform, false);
+            circle.name = "Bouton_" + letter;
+            circle.SetActive(true);
+            circle.transform.localScale = Vector3.one;
+            circle.GetComponent<Image>().color = color;
+            var letterText = circle.GetComponentInChildren<TMP_Text>();
+            if (letterText != null) letterText.text = letter;
+            var size = circle.AddComponent<LayoutElement>();
+            size.preferredWidth = 46f;
+            size.preferredHeight = 46f;
+
+            var textObject = new GameObject("Texte_" + letter, typeof(RectTransform), typeof(TextMeshProUGUI));
+            textObject.transform.SetParent(answers.transform, false);
+            var text = textObject.GetComponent<TextMeshProUGUI>();
+            text.fontSize = 26f;
+            text.alignment = TextAlignmentOptions.MidlineLeft;
+            text.color = Color.white;
+            text.raycastTarget = false;
+            if (label != null) text.font = label.font;
+            return text;
+        }
+
         private IEnumerator TypeLine()
         {
             label.ForceMeshUpdate();
@@ -137,7 +259,14 @@ namespace JourneyThroughXR.Guide
         private void SetVisible(bool visible)
         {
             if (bubble != null) bubble.SetActive(visible);
-            if (!visible) SetPrompt(false);
+            if (visible) return;
+            SetPrompt(false);
+            if (answers != null) answers.SetActive(false);
+            if (labelRaised && label != null)
+            {
+                ((RectTransform)label.transform).offsetMin = labelOffsetMin;
+                labelRaised = false;
+            }
         }
 
         private void SetPrompt(bool visible)

@@ -2,6 +2,7 @@ using JourneyThroughXR.Guide;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 namespace JourneyThroughXR.UI
 {
@@ -57,6 +58,9 @@ namespace JourneyThroughXR.UI
         private float openAmount;
         private bool wanted;
         private bool forced;
+        private bool blocked;
+        private bool holdingLastFrame;
+        private IXRSelectInteractor[] handInteractors = new IXRSelectInteractor[0];
 
         // Cycle de vie
         private void Awake()
@@ -72,6 +76,7 @@ namespace JourneyThroughXR.UI
                 var found = GameObject.Find("Left Controller");
                 if (found != null) hand = found.transform;
             }
+            if (hand != null) handInteractors = hand.GetComponentsInChildren<IXRSelectInteractor>(true);
             if (robot == null)
             {
                 var guide = FindAnyObjectByType<GuideRobot>();
@@ -117,14 +122,28 @@ namespace JourneyThroughXR.UI
         {
             var action = showAction.action;
             if (action == null) return;
+            bool holding = HandIsHolding();
+            bool justReleased = holdingLastFrame && !holding;
+            holdingLastFrame = holding;
+
             if (toggle)
             {
-                if (action.WasPressedThisFrame()) wanted = !wanted;
+                if (action.WasPressedThisFrame() && !holding && !justReleased) wanted = !wanted;
             }
             else
             {
-                wanted = forced || action.IsPressed();
+                bool pressed = action.IsPressed();
+                if (holding || justReleased) blocked = true;
+                if (!pressed) blocked = false;
+                wanted = forced || (pressed && !blocked);
             }
+        }
+
+        private bool HandIsHolding()
+        {
+            foreach (var interactor in handInteractors)
+                if (interactor != null && interactor.hasSelection) return true;
+            return false;
         }
 
         // Affichage

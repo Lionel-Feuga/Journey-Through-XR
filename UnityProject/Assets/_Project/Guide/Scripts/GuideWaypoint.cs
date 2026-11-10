@@ -24,6 +24,37 @@ namespace JourneyThroughXR.Guide
         [Tooltip("Délai en secondes entre l'arrêt du robot et le début du dialogue.")]
         [SerializeField] private float dialogueDelay = 0.5f;
 
+        [Header("Fin d'activité avec le robot")]
+        [Tooltip("Le visiteur termine l'activité en revenant voir le robot et en appuyant sur A.")]
+        [SerializeField] private bool confirmWithRobot;
+
+        [Tooltip("Phrases dites une fois le tutoriel fermé.")]
+        [TextArea(2, 4)]
+        [SerializeField] private string[] releaseLines =
+        {
+            "Amusez-vous bien ! Revenez me voir quand vous voudrez passer à la suite."
+        };
+
+        [Tooltip("Question posée quand le visiteur revient près du robot. A : oui, B : pas encore.")]
+        [TextArea(2, 4)]
+        [SerializeField] private string[] confirmLines =
+        {
+            "Alors, on passe à la suite ?"
+        };
+
+        [SerializeField] private string yesLabel = "Oui";
+        [SerializeField] private string noLabel = "Pas encore";
+
+        [Tooltip("Phrase dite si le visiteur répond « pas encore ».")]
+        [TextArea(2, 4)]
+        [SerializeField] private string[] notYetLines =
+        {
+            "Pas de souci, prenez votre temps !"
+        };
+
+        [Tooltip("Délai en secondes avant de poser la question si le visiteur est resté près du robot.")]
+        [SerializeField] private float confirmDelay = 20f;
+
         [Header("Événements")]
         public UnityEvent onRobotArrived = new UnityEvent();
         public UnityEvent onVisitorJoined = new UnityEvent();
@@ -41,6 +72,14 @@ namespace JourneyThroughXR.Guide
         public string[] Dialogue => dialogue;
         public bool HasDialogue => dialogue != null && dialogue.Length > 0;
         public float DialogueDelay => dialogueDelay;
+
+        public bool ConfirmWithRobot => confirmWithRobot;
+        public string[] ReleaseLines => releaseLines;
+        public string[] ConfirmLines => confirmLines;
+        public string YesLabel => yesLabel;
+        public string NoLabel => noLabel;
+        public string[] NotYetLines => notYetLines;
+        public float ConfirmDelay => confirmDelay;
 
         public void SetDialogue(string[] lines) => dialogue = lines;
 
