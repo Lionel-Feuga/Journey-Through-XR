@@ -137,6 +137,8 @@ namespace JourneyThroughXR.Guide
                 if (waypoint.WaitForActivity != null)
                 {
                     yield return ShowTutorial(waypoint.WaitForActivity);
+                    if (waypoint.ConfirmWithRobot && speech != null)
+                        yield return WaitForConfirmation(waypoint, waypoint.WaitForActivity);
                     while (!waypoint.WaitForActivity.IsCompleted)
                     {
                         FaceVisitor();
@@ -184,6 +186,63 @@ namespace JourneyThroughXR.Guide
             while (tutorial.IsOpen)
             {
                 FaceVisitor();
+                yield return null;
+            }
+        }
+
+        private IEnumerator WaitForConfirmation(GuideWaypoint waypoint, Activity activity)
+        {
+            speech.SayLines(waypoint.ReleaseLines);
+            while (speech.IsSpeaking)
+            {
+                FaceVisitor();
+                yield return null;
+            }
+
+            bool visitorLeft = false;
+            bool asking = false;
+            float start = Time.time;
+
+            while (!activity.IsCompleted)
+            {
+                FaceVisitor();
+                bool near = VisitorWithin(talkDistance);
+                if (!near) visitorLeft = true;
+
+                if (asking)
+                {
+                    if (!near)
+                    {
+                        speech.Hide();
+                        asking = false;
+                    }
+                    else if (!speech.IsSpeaking)
+                    {
+                        if (speech.LastAnswer)
+                        {
+                            activity.CompleteActivity();
+                            break;
+                        }
+
+                        asking = false;
+                        visitorLeft = false;
+                        speech.SayLines(waypoint.NotYetLines);
+                        while (speech.IsSpeaking)
+                        {
+                            FaceVisitor();
+                            yield return null;
+                        }
+                        start = Time.time;
+                    }
+                }
+                else if (near && (visitorLeft || Time.time - start >= waypoint.ConfirmDelay))
+                {
+                    string question = waypoint.ConfirmLines != null && waypoint.ConfirmLines.Length > 0
+                        ? waypoint.ConfirmLines[0] : "On passe à la suite ?";
+                    speech.Ask(question, waypoint.YesLabel, waypoint.NoLabel);
+                    asking = true;
+                }
+
                 yield return null;
             }
         }

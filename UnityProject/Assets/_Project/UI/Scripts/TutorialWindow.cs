@@ -23,10 +23,10 @@ namespace JourneyThroughXR.UI
         [SerializeField] private float distance = 1.2f;
 
         [Tooltip("Décalage vertical par rapport aux yeux.")]
-        [SerializeField] private float heightOffset = -0.15f;
+        [SerializeField] private float heightOffset = 0.05f;
 
         [Tooltip("Angle en degrés entre le robot et la fenêtre, vus par le visiteur, pour que le robot ne la cache pas.")]
-        [SerializeField] private float sideAngle = 40f;
+        [SerializeField] private float sideAngle = 25f;
 
         [Header("Commande")]
         [Tooltip("Bouton qui valide la fenêtre, comme le bouton « Compris ».")]
@@ -117,11 +117,25 @@ namespace JourneyThroughXR.UI
             {
                 Vector3 toAvoid = Flat(avoid.position - visitor.position);
                 float side = Vector3.SignedAngle(toAvoid, forward, Vector3.up) < 0f ? -1f : 1f;
-                forward = Quaternion.AngleAxis(sideAngle * side, Vector3.up) * toAvoid;
+                Vector3 preferred = Quaternion.AngleAxis(sideAngle * side, Vector3.up) * toAvoid;
+                Vector3 other = Quaternion.AngleAxis(-sideAngle * side, Vector3.up) * toAvoid;
+                forward = !Blocked(preferred, avoid) ? preferred : !Blocked(other, avoid) ? other : toAvoid;
             }
 
             panel.transform.position = visitor.position + forward * distance + Vector3.up * heightOffset;
             panel.transform.rotation = Quaternion.LookRotation(forward, Vector3.up);
+        }
+
+        private bool Blocked(Vector3 direction, Transform ignore)
+        {
+            Vector3 origin = visitor.position + Vector3.up * heightOffset;
+            var hits = Physics.RaycastAll(origin, direction, distance + 0.35f, ~0, QueryTriggerInteraction.Ignore);
+            foreach (var hit in hits)
+            {
+                if (hit.transform.IsChildOf(ignore) || hit.transform.IsChildOf(visitor.root)) continue;
+                return true;
+            }
+            return false;
         }
 
         private static Vector3 Flat(Vector3 direction)
