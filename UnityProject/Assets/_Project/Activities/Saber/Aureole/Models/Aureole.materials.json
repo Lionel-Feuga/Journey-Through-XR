@@ -1,0 +1,14 @@
+{
+  "materials": [
+    { "name": "Chrome_Satin",    "color": [0.620, 0.660, 0.690], "metallic": 1.00, "roughness": 0.23 },
+    { "name": "Chrome_Polished", "color": [0.750, 0.780, 0.800], "metallic": 1.00, "roughness": 0.14 },
+    { "name": "Grip_Black",      "color": [0.004, 0.005, 0.006], "metallic": 0.05, "roughness": 0.42 },
+    { "name": "Recess_Black",    "color": [0.002, 0.003, 0.004], "metallic": 0.35, "roughness": 0.38 },
+    { "name": "Steel_Dark",      "color": [0.085, 0.100, 0.110], "metallic": 0.90, "roughness": 0.28 },
+    { "name": "Brass_Satin",     "color": [0.550, 0.360, 0.130], "metallic": 0.85, "roughness": 0.28 },
+    { "name": "Control_Bronze",  "color": [0.190, 0.095, 0.040], "metallic": 0.85, "roughness": 0.30 },
+    { "name": "Brass_Contacts",  "color": [0.420, 0.245, 0.100], "metallic": 0.90, "roughness": 0.26 },
+    { "name": "Indicator_Red",   "color": [0.200, 0.012, 0.005], "metallic": 0.25, "roughness": 0.26 },
+    { "name": "Indicator_Green", "color": [0.035, 0.100, 0.025], "metallic": 0.25, "roughness": 0.28 }
+  ]
+}

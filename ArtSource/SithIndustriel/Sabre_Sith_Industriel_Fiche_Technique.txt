@@ -1,0 +1,44 @@
+FICHE TECHNIQUE — SABRE SITH INDUSTRIEL
+
+Reconstruction du concept fourni. Les vues de côté, de trois-quarts et des extrémités ont guidé les formes. Dimensions réelles adaptées au cahier des charges, sans reprise de pièces des modèles précédents.
+
+OBJETS ET TRIANGLES
+Maillages de poignée : 210
+Objets de poignée, avec Saber_Root et Blade_Socket : 212
+Objets STUDIO : 10
+Total objets scène : 222
+Triangles de base, sans modificateurs et hors STUDIO : 34872
+Triangles évalués, avec modificateurs et hors STUDIO : 128704
+Plus grande pièce : Grip_Manchon_00 — 576 triangles de base.
+Chaque maillage de poignée : Bevel 2 segments puis Weighted Normal, non appliqués. Aucun autre modificateur, aucun Subdivision ou Multires, aucune courbe.
+Cylindres et bagues principaux : 48 segments ; petites pièces rondes : 12 ou 16. Les ailettes utilisent 12 divisions pour un arc partiel, et non pour un cercle complet.
+
+DIMENSIONS ET REPÈRE
+Encombrement base X × Y × Z : 4.875 × 5.383 × 28.032 cm.
+Longueur totale, ailettes comprises : 28,03 cm environ. Diamètre de prise : 3,46 cm sur les manchons, 3,50 cm sur les bourrelets.
+Zone de prise nominale : Z = −0,080 à −0,010 m. Centre de prise : (0 ; 0 ; −0,045) m.
+Origine mondiale située sur l’axe de la lame, 4,5 cm au-dessus du centre de prise. Unités métriques, 1 unité = 1 m.
+Saber_Root : (0 ; 0 ; 0). Toutes les pièces de poignée sont ses enfants directs.
+Blade_Socket : (0 ; 0 ; +0,132) m, au fond de l’émetteur. Sortie de lame vers +Z. Commandes vers +Y.
+Rayon libre minimal de l’ouverture : 1,305 cm, pour une lame de rayon 1,10 cm. Une seule lame prévue ; ni lame, ni halo modélisé.
+Rotations nulles et échelles (1,1,1) sur tous les objets. Caméra et lumières orientées par contraintes, dans STUDIO avec le sol et les cibles.
+
+MATÉRIAUX — PRINCIPLED BSDF, RGB LINÉAIRE
+Chrome_Poli : RGB (0.5300 ; 0.5600 ; 0.5900), Metallic 1.000, Roughness 0.140
+Acier_Satine : RGB (0.3100 ; 0.3300 ; 0.3500), Metallic 1.000, Roughness 0.230
+Acier_Canon : RGB (0.0250 ; 0.0300 ; 0.0340), Metallic 0.900, Roughness 0.310
+Grip_Graphite : RGB (0.0030 ; 0.0040 ; 0.0050), Metallic 0.030, Roughness 0.490
+Noir_Profond : RGB (0.0020 ; 0.0030 ; 0.0040), Metallic 0.250, Roughness 0.300
+Rouge_Rubis : RGB (0.2500 ; 0.0010 ; 0.0030), Metallic 0.200, Roughness 0.320
+Studio_Gris : RGB (0.0900 ; 0.1000 ; 0.1150), Metallic 0.000, Roughness 0.800 — STUDIO uniquement
+Sept matériaux au total, six sur la poignée. Aucune texture, normale procédurale ou bump.
+Rouge_Rubis : émission uniforme RGB linéaire (0,40 ; 0,001 ; 0,003), intensité 0,12 pour les témoins et inserts rouges. Aucun halo.
+Acier_Satine : Anisotropic = 0,22. Grip_Graphite : Specular IOR Level = 0,18.
+
+DÉTAILS ET MOBILITÉ
+Trois ailettes séparées et leurs lèvres, véritables ouvertures dans les viroles, fonds rouges, joints, coutures de grip, vis, plaques, insignes et témoins constituent des maillages distincts.
+Interrupteur_Poussoir : pièce mobile séparée, origine au centre du bouton ; translation indicative de 0,7 mm suivant −Y local. Aucune animation fournie. Les autres pièces sont fixes.
+Le grain du revêtement et les rayures de brossage présents sur le concept sont remplacés par des matériaux unis, conformément à la contrainte sans textures. Les détails cachés restent interprétés.
+
+CONTRÔLES
+Budget de base total et par pièce contrôlé ; maillages fermés sans arêtes non-manifold, normales recalculées vers l’extérieur et volumes signés positifs. Hiérarchie, modificateurs, matériaux, rotations et échelles vérifiés. Les comptes de triangles excluent STUDIO.

@@ -1,0 +1,21 @@
+AUREOLE — VERSION DETAILLEE
+
+Priorite a la fidelite visuelle ; pieces separees, cylindres 96-128 segments, chanfreins a 3 segments.
+Source Blender editable avec modificateurs. FBX avec geometrie evaluee, sans studio.
+Poignee : environ 29 cm ; prise 3,5 cm. Lame : 90 cm, rayon 1,1 cm, pivot a la base.
+Origine de reference : 45 mm au-dessus du centre de prise. Repere Blender +Z, export Unity +Y.
+Pommel_Ring : rotation autour de X a la charniere.
+Objets du modele : 93. Triangles evalues hors lame : 210,480. Lame : 2,496.
+Cette version detaillee n est pas optimisee pour le budget Quest. Aucun script, aucun halo.
+Materiaux : RGB lineaire / Metallic / Roughness
+Chrome_Satin: (0.62, 0.66, 0.69) / 1.00 / 0.23
+Chrome_Polished: (0.75, 0.78, 0.8) / 1.00 / 0.14
+Grip_Black: (0.004, 0.005, 0.006) / 0.05 / 0.42
+Recess_Black: (0.002, 0.003, 0.004) / 0.35 / 0.38
+Steel_Dark: (0.085, 0.1, 0.11) / 0.90 / 0.28
+Brass_Satin: (0.55, 0.36, 0.13) / 0.85 / 0.28
+Control_Bronze: (0.19, 0.095, 0.04) / 0.85 / 0.30
+Brass_Contacts: (0.42, 0.245, 0.1) / 0.90 / 0.26
+Indicator_Red: (0.2, 0.012, 0.005) / 0.25 / 0.26
+Indicator_Green: (0.035, 0.1, 0.025) / 0.25 / 0.28
+Blade_White: (0.85, 0.95, 1.0) / 0.00 / 0.30

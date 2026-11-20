@@ -1,0 +1,13 @@
+Validation C# — Unity 6000.3.10f1
+
+Compilation des trois scripts livrés réussie avec le compilateur Roslyn et les
+assemblies réelles de Unity 6000.3.10f1 (Core, XR, Physics et Editor).
+Aucune erreur ni avertissement de compilation.
+
+La validation dans l'éditeur Unity n'a pas pu s'exécuter : son démarrage en
+batch est bloqué par la connexion au service Unity Licensing Client.
+La génération effective du prefab, l'import dans Unity et les tests de
+comportement ne sont donc pas certifiés par cette vérification de compilation.
+
+Les deux FBX ont en revanche été réimportés et vérifiés dans Blender : voir
+validation_model.json. Aucun essai en casque/manette n'a été réalisé.

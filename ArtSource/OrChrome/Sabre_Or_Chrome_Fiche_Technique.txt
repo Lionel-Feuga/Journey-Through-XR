@@ -1,0 +1,46 @@
+FICHE TECHNIQUE — SABRE OR ET CHROME
+
+Reconstruction à partir de la capture 2026-11-13 083216. Modèle distinct du sabre courbe précédent. La référence Sabre_Chrome.blend sert uniquement de référence de méthode.
+
+ORIENTATION INTERPRÉTÉE
+L’émetteur est situé du côté du col noir texturé et de la grande commande circulaire (bas-gauche sur la référence). La cage aux fenêtres dorées se trouve côté pommeau. Les faces cachées et les détails internes sont interprétés.
+
+GÉOMÉTRIE
+Maillages de la poignée : 322
+Objets de poignée avec Saber_Root et Blade_Socket : 324
+Objets STUDIO : 8
+Objets total scène : 332
+Triangles de base sans modificateurs, hors STUDIO : 25088
+Triangles évalués avec modificateurs, hors STUDIO : 93888
+Plus grande pièce : Pommeau_Col_Chrome — 768 triangles de base.
+Chaque maillage de poignée possède Bevel (2 segments) suivi de Weighted Normal, non appliqués. Aucun Subdivision, Multires, Boolean, autre modificateur, ni courbe.
+Cylindres et bagues principaux : 48 segments ; petites pièces rondes : 12 ou 16.
+Bandes noires, cadres ajourés, joints, vis, anneaux, contacts et plaquettes sont des pièces distinctes. Aucun détail par texture.
+
+DIMENSIONS ET REPÈRE
+Encombrement base X × Y × Z : 3.630 × 4.476 × 28.485 cm.
+Longueur nominale : 28,5 cm environ. Diamètre sur les bandes de prise : 3,50 cm.
+Centre de prise : (0 ; 0 ; −0,045) m. Origine mondiale sur l’axe de lame, exactement 4,5 cm au-dessus de ce centre.
+Saber_Root : (0 ; 0 ; 0). Tous les maillages de poignée et Blade_Socket sont ses enfants directs.
+Blade_Socket : (0 ; 0 ; +0,0675) m, au fond de l’émetteur. Lame vers +Z. Commandes vers +Y.
+Rayon libre minimal de la bouche de l’émetteur : 1,305 cm. Lame prévue : rayon 1,10 cm. Aucun objet lame ou halo.
+Unité métrique : 1 unité = 1 m. Rotations (0,0,0), échelles (1,1,1) sur tous les objets.
+Éclairages, caméra, cible et sol dans STUDIO ; caméra et éclairages orientés par contraintes.
+
+MATÉRIAUX — PRINCIPLED BSDF, COULEURS RGB LINÉAIRES
+Chrome_Poli : RGB (0.6600 ; 0.7000 ; 0.7400), Metallic 1.000, Roughness 0.110
+Acier_Satine : RGB (0.3200 ; 0.3600 ; 0.4000), Metallic 0.920, Roughness 0.290
+Grip_Graphite : RGB (0.0030 ; 0.0040 ; 0.0050), Metallic 0.060, Roughness 0.420
+Noir_Profond : RGB (0.0040 ; 0.0060 ; 0.0080), Metallic 0.250, Roughness 0.280
+Laiton_Or : RGB (0.6700 ; 0.4000 ; 0.0450), Metallic 1.000, Roughness 0.170
+Studio_Gris : RGB (0.0180 ; 0.0210 ; 0.0250), Metallic 0.000, Roughness 0.650 — STUDIO uniquement
+Or_Clair : RGB (0.7600 ; 0.5700 ; 0.2000), Metallic 1.000, Roughness 0.170
+Sept matériaux au total, six sur la poignée. Aucune texture. Grip_Graphite : Specular IOR Level = 0,12.
+
+PIÈCES MOBILES
+Commande_Poussoir : origine sur son axe Y ; course indicative de 0,8 mm suivant −Y local. La fente séparée Commande_Fente doit accompagner cette translation, tout en restant enfant direct de Saber_Root.
+Mouvement interprété depuis la forme du bouton ; aucune mécanique interne attestée, aucune animation fournie. La couronne décorative reste fixe.
+
+VÉRIFICATIONS
+Budget total et budget par pièce contrôlés sur les maillages de base. Toutes les pièces sont fermées, sans arêtes non-manifold ; normales recalculées et volumes signés positifs. Hiérarchie, ordre des modificateurs, rotations, échelles et nombre de matériaux contrôlés.
+Les silhouettes et proportions sont une interprétation de la photographie perspective unique, sans plan coté.

@@ -1,0 +1,16 @@
+{
+  "Obsidienne.fbx": {
+    "passed": true,
+    "rotation_samples": 72,
+    "triangles": 64000,
+    "mesh_count": 6,
+    "diameter_m": 0.5004000067710876
+  },
+  "Obsidienne_Low.fbx": {
+    "passed": true,
+    "rotation_samples": 72,
+    "triangles": 22128,
+    "mesh_count": 6,
+    "diameter_m": 0.5002550482749939
+  }
+}

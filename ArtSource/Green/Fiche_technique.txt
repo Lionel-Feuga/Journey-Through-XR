@@ -1,0 +1,48 @@
+SABRE QUEST — FICHE TECHNIQUE
+
+DIMENSIONS (repère Unity, mètres)
+Poignée : 0,290 m ; diamètre de prise : 0,035 m.
+Encombrement poignée XYZ : 0,048 × 0,290 × 0,0528 m.
+Zone tenue : Y de -0,089 à -0,001 ; centre (0,-0,045,0).
+Origine Saber_Hilt : (0,0,0), 45 mm au-dessus de ce centre, sur l'axe.
+Lame : rayon 0,011 m ; longueur 0,900 m, calotte arrondie comprise.
+Pivot lame : (0,+0,063,0), dans l'émetteur ; direction +Y.
+Commandes vers -Z. Rotations nulles ; échelles (1,1,1). 1 unité = 1 m.
+
+OBJETS ET TRIANGLES
+Saber_Hilt : 9 404 triangles, un seul maillage, 6 matériaux.
+Saber_Blade : 864 triangles, matériau BladeWhite.
+Pommel_Ring : 420 triangles, matériau Chrome.
+Total : 10 688 triangles. Aucun autre objet dans le FBX ou le .blend.
+
+PIÈCE MOBILE
+Pommel_Ring : anneau de suspension, pivot (0,-0,196,-0,020).
+Basculement autour de X local ; pose initiale rabattue contre le pommeau.
+Les limites de mouvement sont à définir dans l'application.
+
+MATÉRIAUX — BaseColor RGB linéaire ; Metallic ; Roughness
+Chrome         : (0.650,0.680,0.700) ; 1.00 ; 0.22
+GripBlack      : (0.007,0.008,0.009) ; 0.05 ; 0.40
+Brass          : (0.520,0.320,0.105) ; 0.90 ; 0.29
+DarkSteel      : (0.045,0.052,0.055) ; 0.80 ; 0.30
+IndicatorRed   : (0.320,0.015,0.008) ; 0.15 ; 0.30
+IndicatorGreen : (0.055,0.160,0.045) ; 0.15 ; 0.30
+BladeWhite     : (0.850,0.950,1.000) ; 0.00 ; 0.35
+URP/Lit : Smoothness = 1 - Roughness. Couleurs unies, aucune texture.
+Le FBX transporte les matériaux PBR, pas un shader URP : utiliser ces
+valeurs pour les matériaux URP/Lit du projet. Aucun halo ni émission.
+
+FABRICATION ET CONTRÔLES
+Cylindres principaux : 48 segments. Aucun chanfrein géométrique.
+Normales pondérées et triangulation appliquées ; aucun modificateur restant.
+Unions booléennes appliquées pour supprimer les faces internes des pièces fixes.
+Réimport FBX vérifié : surfaces fermées, une composante par objet,
+normales extérieures, noms, pivots, dimensions et transformations.
+Dans Unity : Scale Factor 1, Convert Units actif, Normals = Import.
+Validation géométrique effectuée dans Blender ; pas de test sur casque Quest.
+
+SOURCE BLENDER
+Repère Blender : lame +Z, commandes +Y ; conversion appliquée au FBX.
+Saber_Blade est masquée pour inspecter la poignée : Alt-H pour l'afficher.
+Reconstruction d'après une seule vue ; détails cachés interprétés.
+Aucun script Unity fourni.

@@ -1,0 +1,46 @@
+FICHE TECHNIQUE — DARK VADOR ESB
+
+Version inspirée de L’Empire contre-attaque, d’après les deux premières photographies de répliques fournies. La troisième photographie est utilisée pour les détails communs seulement. Aucun élément de silhouette des modèles précédents n’est repris.
+
+GÉOMÉTRIE
+Maillages de poignée : 115
+Objets de poignée avec Saber_Root et Blade_Socket : 117
+Objets STUDIO : 8
+Objets total scène : 125
+Triangles de base sans modificateurs, hors STUDIO : 21222
+Triangles évalués avec modificateurs, hors STUDIO : 68590
+Plus grande pièce : Pommeau_Moletage_00 — 864 triangles de base.
+Chaque maillage de poignée possède Bevel (2 segments ; 1 pour les petits reliefs de moletage) puis Weighted Normal, tous non appliqués.
+Aucun Subdivision, Multires, Boolean, autre modificateur ou courbe. Les fils et l’anneau sont des maillages.
+Cylindres et bagues principaux : 48 segments. Petites pièces rondes, fils et vis : 12 ou 16 segments. Les motifs de moletage sont des reliefs individuels regroupés par rangée.
+
+DIMENSIONS ET REPÈRE
+Encombrement X × Y × Z, géométrie de base : 4.000 × 5.542 × 27.124 cm.
+Longueur totale : 27,124 cm. Diamètre de prise nominal : 3,52 cm sur les rails en T.
+Les six rails s’étendent de Z = −0,111617 à +0,021617 m ; leur centre longitudinal est exactement à −0,045 m.
+Origine mondiale : axe de lame, 4,5 cm au-dessus du centre de la zone de prise. Unités métriques ; 1 unité = 1 m.
+Saber_Root à (0 ; 0 ; 0). Tous les maillages de poignée et Blade_Socket en sont des enfants directs.
+Blade_Socket : (0 ; 0 ; +0,108117) m. Direction de sortie de lame : +Z. Boîtier de commande tourné vers +Y.
+Rayon libre minimal du passage dans la buse : 1,305 cm, pour une lame de rayon 1,10 cm. Capot biseauté creux, sans lame ni halo.
+Tous les objets : rotation (0,0,0), échelle (1,1,1). Caméra et lumières orientées par contraintes dans STUDIO.
+
+MATÉRIAUX — PRINCIPLED BSDF, RGB LINÉAIRE
+Chrome_Poli : RGB (0.6200 ; 0.6600 ; 0.7000), Metallic 1.000, Roughness 0.130
+Noir_Laque : RGB (0.0050 ; 0.0060 ; 0.0080), Metallic 0.250, Roughness 0.310
+Grip_Noir : RGB (0.0030 ; 0.0040 ; 0.0050), Metallic 0.020, Roughness 0.440
+Fil_Rouge : RGB (0.4300 ; 0.0050 ; 0.0090), Metallic 0.050, Roughness 0.300
+Fil_Bleu : RGB (0.0120 ; 0.0950 ; 0.2500), Metallic 0.080, Roughness 0.310
+Fil_Brun : RGB (0.1500 ; 0.0410 ; 0.0120), Metallic 0.030, Roughness 0.360
+Studio_Gris : RGB (0.0450 ; 0.0520 ; 0.0610), Metallic 0.000, Roughness 0.730 — STUDIO uniquement
+Sept matériaux au total, six sur la poignée. Couleurs unies uniquement, sans textures, bump ou normal maps. Grip_Noir : Specular IOR Level 0,15.
+
+PIÈCES MOBILES
+Commande_Levier_Pivot : origine (0 ; 0,0226 ; 0,046117) m, sur la charnière ; ouverture indicative de 15° autour de X local. La vis de façade doit accompagner son mouvement tout en conservant la hiérarchie directe sous Saber_Root.
+Attache_Anneau_D : origine (0 ; −0,0225 ; 0,104117) m ; rotation autour de X local sur l’axe de fixation. Aucune animation fournie.
+Mouvements indicatifs, déduits de la forme des pièces. Aucun mécanisme interne ajouté.
+
+FIDÉLITÉ ET CONTRÔLES
+Capot oblique noir, corps chromé, six profils en T, collier noir, boîtier à contacts bombés, vis de serrage, moletage et câblage rouge, brun, bleu et métallique modélisés séparément.
+Pommeau corrigé : transition de 2,5 mm entre les rails et le bouchon, moletage de 144 motifs par rangée avec relief radial de 0,065 mm. Les contacts bombés sont représentés en métal poli ; aucune texture ni matériau de lentille additionnel. Les faces cachées sont interprétées depuis les références et ne constituent pas une reproduction métrologique d’un accessoire de tournage.
+Maillages fermés sans arêtes non-manifold, normales recalculées vers l’extérieur et volumes signés positifs. Budget total et par pièce, hiérarchie, transformations et ordre des modificateurs contrôlés.
+La longueur initiale a été rétablie par un allongement de 10,234 mm de la partie droite de prise. Les extrémités des rails, leur section, les pièces de commande et le pommeau compact conservent leurs dimensions locales. Le centre de prise reste à Z = −0,045 m.

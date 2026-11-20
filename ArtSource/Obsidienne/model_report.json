@@ -1,0 +1,63 @@
+{
+  "blender": "5.2.2 LTS",
+  "meters": true,
+  "meshes": {
+    "Grip": {
+      "triangles": 19576,
+      "vertices": 9888,
+      "materials": 5
+    },
+    "Guard": {
+      "triangles": 19528,
+      "vertices": 9808,
+      "materials": 3
+    },
+    "Emitter_A": {
+      "triangles": 12164,
+      "vertices": 6104,
+      "materials": 4
+    },
+    "Emitter_B": {
+      "triangles": 12164,
+      "vertices": 6104,
+      "materials": 4
+    },
+    "Blade_A": {
+      "triangles": 284,
+      "vertices": 144,
+      "materials": 1
+    },
+    "Blade_B": {
+      "triangles": 284,
+      "vertices": 144,
+      "materials": 1
+    }
+  },
+  "hierarchy": {
+    "Obsidienne": null,
+    "Axis_Locked": "Obsidienne",
+    "Axis_Normal": "Obsidienne",
+    "Grab_Anchor": "Obsidienne",
+    "Grip": "Obsidienne",
+    "Guard": "Obsidienne",
+    "Rotor": "Obsidienne",
+    "Emitter_A": "Rotor",
+    "Emitter_B": "Rotor",
+    "Socket_A": "Rotor",
+    "Blade_A": "Socket_A",
+    "Tip_A": "Socket_A",
+    "Socket_B": "Rotor",
+    "Blade_B": "Socket_B",
+    "Tip_B": "Socket_B"
+  },
+  "total_triangles": 64000,
+  "low_triangles": {
+    "Grip": 6654,
+    "Guard": 6638,
+    "Emitter_A": 4134,
+    "Emitter_B": 4134,
+    "Blade_A": 284,
+    "Blade_B": 284
+  },
+  "low_total_triangles": 22128
+}

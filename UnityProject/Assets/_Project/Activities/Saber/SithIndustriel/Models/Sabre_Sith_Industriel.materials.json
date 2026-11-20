@@ -1,0 +1,69 @@
+{
+  "materials": [
+    {
+      "name": "Rouge_Rubis",
+      "color": [
+        0.25,
+        0.001,
+        0.003
+      ],
+      "metallic": 0.2,
+      "roughness": 0.32,
+      "emission": [
+        0.048,
+        0.0001,
+        0.0004
+      ]
+    },
+    {
+      "name": "Acier_Satine",
+      "color": [
+        0.31,
+        0.33,
+        0.35
+      ],
+      "metallic": 1.0,
+      "roughness": 0.23
+    },
+    {
+      "name": "Noir_Profond",
+      "color": [
+        0.002,
+        0.003,
+        0.004
+      ],
+      "metallic": 0.25,
+      "roughness": 0.3
+    },
+    {
+      "name": "Acier_Canon",
+      "color": [
+        0.025,
+        0.03,
+        0.034
+      ],
+      "metallic": 0.9,
+      "roughness": 0.31
+    },
+    {
+      "name": "Chrome_Poli",
+      "color": [
+        0.53,
+        0.56,
+        0.59
+      ],
+      "metallic": 1.0,
+      "roughness": 0.14
+    },
+    {
+      "name": "Grip_Graphite",
+      "color": [
+        0.003,
+        0.004,
+        0.005
+      ],
+      "metallic": 0.03,
+      "roughness": 0.49
+    }
+  ]
+}

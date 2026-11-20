@@ -1,0 +1,54 @@
+FICHE TECHNIQUE — SABRE COURBE
+
+Modèle réalisé à partir des deux captures fournies. Le fichier Sabre_Chrome a été consulté uniquement comme référence de méthode et de finition.
+
+GÉOMÉTRIE
+Maillages de la poignée : 123
+Objets de la poignée, avec Saber_Root et Blade_Socket : 125
+Objets STUDIO : 7
+Objets total scène : 132
+Triangles de base (sans modificateurs, hors STUDIO) : 34,860
+Triangles évalués (avec modificateurs, hors STUDIO) : 120,968
+Plus grande pièce : Grip_Central_Support — 1440 triangles de base
+Toutes les pièces : Bevel 1 segment sur les diamants et 2 segments sur les autres pièces, puis Weighted Normal, non appliqués. Aucun autre modificateur, aucune courbe. Géométrie fermée et normales recalculées vers l’extérieur.
+Cylindres principaux : 48 segments ; petites pièces rondes : 12 ou 16.
+
+DIMENSIONS ET REPÈRE
+Unités métriques ; 1 unité = 1 m. Axe de sortie de lame : +Z. Commandes principales : +Y.
+Longueur axiale pommeau–émetteur : 29,33 cm. Avec pointe du crochet : 31,94 cm.
+Encombrement base X × Y × Z : 9.276 × 4.481 × 31.938 cm.
+Diamètre de la zone tenue : 3,416 cm sur les diamants ; 3,58 cm sur les nervures.
+Centre longitudinal de prise repéré à Z = −0,045 m. Origine à Z = 0, sur l’axe de la lame, 4,5 cm au-dessus de ce niveau.
+La poignée est courbe : le centre transversal de prise est légèrement décalé en X ; l’origine reste sur l’axe de sortie de la lame.
+Saber_Root : (0, 0, 0). Tous les maillages de poignée sont ses enfants directs.
+Blade_Socket : (0, 0, 0,0965) m, au fond de l’émetteur, orienté +Z.
+Rayon libre minimal de la bouche : 1,30 cm ; lame prévue : 1,10 cm de rayon.
+Une seule lame ; aucune lame ni halo modélisés. Pas de Blade_Socket_2.
+Échelles (1,1,1), rotations (0,0,0) de tous les objets. Caméra et éclairages orientés par contraintes STUDIO.
+
+MATÉRIAUX — couleurs RGB LINÉAIRES, Principled BSDF, sans textures
+Chrome_Poli : RGB (0.6600, 0.7000, 0.7400), Metallic 1.000, Roughness 0.150
+Acier_Satine : RGB (0.3200, 0.3600, 0.4000), Metallic 0.920, Roughness 0.290
+Grip_Graphite : RGB (0.0030, 0.0040, 0.0050), Metallic 0.220, Roughness 0.420
+Noir_Profond : RGB (0.0040, 0.0060, 0.0080), Metallic 0.250, Roughness 0.280
+Laiton_Or : RGB (0.6700, 0.4000, 0.0450), Metallic 0.820, Roughness 0.220
+Rouge_Rubis : RGB (0.4200, 0.0080, 0.0160), Metallic 0.450, Roughness 0.230
+Studio_Gris : RGB (0.0180, 0.0210, 0.0250), Metallic 0.000, Roughness 0.650 — STUDIO uniquement
+
+PIÈCES MOBILES / INTENTION DE MOUVEMENT
+Levier_Rouge_Pivot : origine sur l’axe de pivot ; bascule indicative de 12° autour de Y local.
+Interrupteur_Emetteur_Or : coulissement indicatif de 2 mm sur Z local.
+Commande_Molette : origine au centre de son axe Y ; rotation autour de Y.
+Les mouvements sont des interprétations plausibles des captures, non une mécanique attestée. Aucune animation ni contrainte de mouvement exportée.
+
+FIDÉLITÉ
+Silhouette courbe, crochet, bagues de pommeau, inserts noirs quadrillés, nervures chrome, bouton or et levier rouge reproduits en géométrie. Les détails cachés et les dimensions sont interprétés, les vues ne fournissant ni plan coté ni vue orthogonale.
+Le quadrillage est une géométrie de diamants séparés dans des bandes de maillage fermées ; aucune texture, aucun bump.
+
+CONTRÔLES
+Budget < 35 000 triangles de base, pièces < 2 000 triangles ; maillages fermés sans arêtes non-manifold ; volumes positifs ; hiérarchie et transformations contrôlées par script.
+STUDIO séparé et exclu des comptes de triangles de la poignée. Sept matériaux au total, dont six pour la poignée.
+
+La zone principale de prise s’étend de Z = −0,098 à +0,008 m ; son milieu est exactement à Z = −0,045 m.
+Specular IOR Level du Grip_Graphite : 0,12 ; autres paramètres non mentionnés : valeurs Principled par défaut.
+Les trois stries séparées Interrupteur_Or_Strie doivent accompagner la translation de l’interrupteur ; elles restent enfants directs de Saber_Root conformément au cahier des charges.

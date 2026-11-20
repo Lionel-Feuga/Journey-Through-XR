@@ -1,0 +1,64 @@
+{
+  "materials": [
+    {
+      "name": "Noir_Profond",
+      "color": [
+        0.004,
+        0.006,
+        0.008
+      ],
+      "metallic": 0.25,
+      "roughness": 0.28
+    },
+    {
+      "name": "Chrome_Poli",
+      "color": [
+        0.66,
+        0.7,
+        0.74
+      ],
+      "metallic": 1.0,
+      "roughness": 0.11
+    },
+    {
+      "name": "Laiton_Or",
+      "color": [
+        0.67,
+        0.4,
+        0.045
+      ],
+      "metallic": 1.0,
+      "roughness": 0.17
+    },
+    {
+      "name": "Or_Clair",
+      "color": [
+        0.76,
+        0.57,
+        0.2
+      ],
+      "metallic": 1.0,
+      "roughness": 0.17
+    },
+    {
+      "name": "Grip_Graphite",
+      "color": [
+        0.003,
+        0.004,
+        0.005
+      ],
+      "metallic": 0.06,
+      "roughness": 0.42
+    },
+    {
+      "name": "Acier_Satine",
+      "color": [
+        0.32,
+        0.36,
+        0.4
+      ],
+      "metallic": 0.92,
+      "roughness": 0.29
+    }
+  ]
+}
