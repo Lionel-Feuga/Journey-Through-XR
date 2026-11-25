@@ -190,6 +190,14 @@ namespace JourneyThroughXR.Activities
         /// </summary>
         public bool HoldReservedWhenIgnited { get; set; }
 
+        /// <summary>
+        /// Verrou d'allumage commun à tous les sabres (null = toujours permis).
+        /// Renvoie faux pour empêcher la gâchette d'allumer ce sabre (voir SaberAmbiance).
+        /// </summary>
+        public static System.Func<LaserSaber, bool> CanIgnite;
+
+        private bool IgnitionBlocked => CanIgnite != null && !IsIgnited && !CanIgnite(this);
+
         /// <summary>Couleur de la lame, du halo, de la traînée et de la lumière projetée.</summary>
         public Color BladeColor
         {
@@ -500,6 +508,9 @@ namespace JourneyThroughXR.Activities
 
         private void OnTriggerPressed(ActivateEventArgs args)
         {
+            // Allumage verrouillé (ambiance pas encore prête) : la pression est ignorée.
+            if (IgnitionBlocked) return;
+
             // Sabre simple : la pression allume ou éteint tout de suite.
             if (blade2 == null)
             {
