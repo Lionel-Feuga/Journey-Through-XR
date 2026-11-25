@@ -146,7 +146,20 @@ namespace JourneyThroughXR.Guide
                     }
                 }
 
-                yield return Wait(waypoint.PauseAtStop);
+                // Félicitations après l'activité : le robot repart dès que le visiteur appuie sur A.
+                if (waypoint.WaitForActivity != null && waypoint.HasCompletedLines && speech != null)
+                {
+                    speech.SayLines(waypoint.CompletedLines);
+                    while (speech.IsSpeaking)
+                    {
+                        FaceVisitor();
+                        yield return null;
+                    }
+                }
+                else
+                {
+                    yield return Wait(waypoint.PauseAtStop);
+                }
                 waypoint.onRobotLeft.Invoke();
             }
 
