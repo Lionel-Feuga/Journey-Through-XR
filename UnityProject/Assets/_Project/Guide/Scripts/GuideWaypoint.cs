@@ -55,6 +55,11 @@ namespace JourneyThroughXR.Guide
         [Tooltip("Délai en secondes avant de poser la question si le visiteur est resté près du robot.")]
         [SerializeField] private float confirmDelay = 20f;
 
+        [Header("Après l'activité")]
+        [Tooltip("Phrases dites une fois l'activité terminée, fermées avec A. Le robot repart dès la dernière fermée, sans la pause.")]
+        [TextArea(2, 4)]
+        [SerializeField] private string[] completedLines;
+
         [Header("Événements")]
         public UnityEvent onRobotArrived = new UnityEvent();
         public UnityEvent onVisitorJoined = new UnityEvent();
@@ -80,6 +85,8 @@ namespace JourneyThroughXR.Guide
         public string NoLabel => noLabel;
         public string[] NotYetLines => notYetLines;
         public float ConfirmDelay => confirmDelay;
+        public string[] CompletedLines => completedLines;
+        public bool HasCompletedLines => completedLines != null && completedLines.Length > 0;
 
         public void SetDialogue(string[] lines) => dialogue = lines;
 
