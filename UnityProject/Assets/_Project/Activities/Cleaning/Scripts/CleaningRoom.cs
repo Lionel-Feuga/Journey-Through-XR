@@ -145,12 +145,6 @@ namespace JourneyThroughXR.Activities
             foreach (var s in spots) if (s != null) s.SetHighlighted(s == target);
         }
 
-        public void SetAssisted(bool on)
-        {
-            if (spots == null) return;
-            foreach (var s in spots) if (s != null) s.SetAssisted(on);
-        }
-
         public void ResetRoom()
         {
             finished = false;

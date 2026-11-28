@@ -7,9 +7,9 @@ namespace JourneyThroughXR.Activities
     /// <summary>
     /// Activité Nettoyage (A1), sanitaires mixte et PMR. Reliée à la progression (C1).
     /// Terminée quand les 3 zones d'un des sanitaires sont propres.
-    /// Aide progressive si le visiteur n'avance plus :
-    ///  1. le robot et le panneau disent précisément quoi faire, la zone suivante clignote en jaune ;
-    ///  2. ensuite, les taches partent beaucoup plus vite au frottement, et le conseil est répété (tout le monde finit).
+    /// Conseils si le visiteur n'avance plus : le robot et le panneau disent précisément quoi faire,
+    /// la zone suivante clignote en jaune, et le conseil est répété tant que rien n'avance.
+    /// Pas d'aide au frottement : l'éponge efface toujours à la même vitesse.
     /// </summary>
     public class CleaningActivity : Activity
     {
@@ -20,14 +20,11 @@ namespace JourneyThroughXR.Activities
         [Tooltip("Prendre une éponge démarre l'activité si le robot ne l'a pas déjà fait.")]
         [SerializeField] private bool startWhenGrabbed = true;
 
-        [Header("Aide progressive (secondes sans progrès)")]
+        [Header("Conseils (secondes sans progrès)")]
         [Tooltip("Premier conseil précis (quoi faire, où), la zone suivante clignote.")]
         [SerializeField] private float hintDelay = 25f;
 
-        [Tooltip("Aide forte : les taches partent 2,5 fois plus vite au frottement.")]
-        [SerializeField] private float assistDelay = 50f;
-
-        [Tooltip("Rappel de l'aide forte tant que rien n'avance.")]
+        [Tooltip("Rappel du conseil tant que rien n'avance.")]
         [SerializeField] private float repeatDelay = 40f;
 
         [Tooltip("Bulle du robot. Vide : celle de la scène est trouvée seule.")]
@@ -39,7 +36,6 @@ namespace JourneyThroughXR.Activities
         // État
         private float lastProgress;
         private bool hintGiven;
-        private bool assisted;
         private float nextRepeat;
 
         // Cycle de vie
@@ -78,19 +74,12 @@ namespace JourneyThroughXR.Activities
             if (!hintGiven && idle >= hintDelay)
             {
                 hintGiven = true;
-                GiveHint(false);
-            }
-
-            if (!assisted && idle >= assistDelay)
-            {
-                assisted = true;
-                foreach (var room in rooms) if (room != null) room.SetAssisted(true);
-                GiveHint(true);
+                GiveHint();
                 nextRepeat = Time.time + repeatDelay;
             }
-            else if (assisted && idle >= assistDelay && Time.time >= nextRepeat)
+            else if (hintGiven && Time.time >= nextRepeat)
             {
-                GiveHint(true);
+                GiveHint();
                 nextRepeat = Time.time + repeatDelay;
             }
         }
@@ -127,7 +116,6 @@ namespace JourneyThroughXR.Activities
             foreach (var room in rooms)
             {
                 if (room == null) continue;
-                room.SetAssisted(false);
                 room.HighlightOnly(null);
                 room.SetHint("");
             }
@@ -135,19 +123,17 @@ namespace JourneyThroughXR.Activities
 
         protected override void OnActivityReset()
         {
-            assisted = false;
             hintGiven = false;
             if (rooms == null) return;
             foreach (var room in rooms)
             {
                 if (room == null) continue;
-                room.SetAssisted(false);
                 room.ResetRoom();
             }
         }
 
-        // Aide
-        private void GiveHint(bool strong)
+        // Conseils
+        private void GiveHint()
         {
             if (rooms == null) return;
             var room = TargetRoom();
@@ -158,8 +144,6 @@ namespace JourneyThroughXR.Activities
             string text;
             if (room.Sponge != null && !room.Sponge.IsHeld)
                 text = "Prenez l'éponge jaune posée sur le lavabo : visez-la et appuyez sur le grip.";
-            else if (strong)
-                text = $"Il reste {spot.HintName}. Frottez-le de près avec l'éponge : quelques allers-retours suffisent maintenant.";
             else
                 text = $"Frottez {spot.HintName} : posez l'éponge sur les taches et faites des allers-retours.";
 

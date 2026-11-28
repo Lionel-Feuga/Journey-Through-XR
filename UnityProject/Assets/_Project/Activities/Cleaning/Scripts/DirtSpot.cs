@@ -47,10 +47,6 @@ namespace JourneyThroughXR.Activities
         [SerializeField] private Color darkDirt = new Color(0.25f, 0.18f, 0.1f);
         [SerializeField] private Color highlightColor = new Color(1f, 0.85f, 0.2f);
 
-        [Header("Aide")]
-        [Tooltip("En mode aidé, la force d'effacement est multipliée par ce facteur.")]
-        [SerializeField, Range(1f, 5f)] private float assistedBoost = 2.5f;
-
         [Tooltip("Texte « Propre ! » affiché quelques secondes une fois la zone nettoyée.")]
         [SerializeField] private TMP_Text cleanLabel;
 
@@ -65,7 +61,6 @@ namespace JourneyThroughXR.Activities
         public string ShortName => shortName;
         public bool IsClean { get; private set; }
         public bool Highlighted { get; private set; }
-        public bool Assisted { get; private set; }
         /// Part de saleté restante, de 1 (sale) à 0 (propre).
         public float Remaining => initialTotal > 0f ? currentTotal / initialTotal : 0f;
 
@@ -218,7 +213,7 @@ namespace JourneyThroughXR.Activities
             float cu = (q.x + 0.5f) * width, cv = (q.y + 0.5f) * height;
             float rx = brushRadius / (halfSize.x * 2f) * width;
             float ry = brushRadius / (halfSize.y * 2f) * height;
-            float strength = moved * rubStrength * (Assisted ? assistedBoost : 1f);
+            float strength = moved * rubStrength;
 
             int x0 = Mathf.Max(0, Mathf.FloorToInt(cu - rx)), x1 = Mathf.Min(width - 1, Mathf.CeilToInt(cu + rx));
             int y0 = Mathf.Max(0, Mathf.FloorToInt(cv - ry)), y1 = Mathf.Min(height - 1, Mathf.CeilToInt(cv + ry));
@@ -262,7 +257,6 @@ namespace JourneyThroughXR.Activities
         }
 
         public void SetHighlighted(bool on) => Highlighted = on;
-        public void SetAssisted(bool on) => Assisted = on;
 
         public void ResetDirt()
         {
